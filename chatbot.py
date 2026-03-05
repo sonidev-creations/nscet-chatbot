@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from groq import Groq
 
-GROQ_API_KEY = "YOUR_GROQ_API_KEY"
+GROQ_API_KEY = "YOU_GROQ_API_KEY"
 groq_client  = Groq(api_key=GROQ_API_KEY)
 GROQ_MODEL   = "llama-3.1-8b-instant"
 
