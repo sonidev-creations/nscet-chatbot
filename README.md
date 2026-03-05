@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="static/images/screenshot.png" alt="nscet-chatbot" width="700"/>
+  <img src="https://raw.githubusercontent.com/sonidev-creations/nscet-chatbot/main/static/images/screenshot.png" alt="NSCET Chatbot" width="700"/>
 </p>
-
 # 🤖 NSCET Chatbot
 
 NSCET Chatbot is a free, open-source chatbot built with **Python (Flask)** for Nandha College of Engineering and Technology — helping students and staff get instant answers about college-related queries.
