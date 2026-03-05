@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mic Test</title>
+<style>
+  body { font-family: Arial; background: #0a1628; color: white;
+         display: flex; flex-direction: column; align-items: center;
+         justify-content: center; height: 100vh; gap: 20px; }
+  button { padding: 16px 32px; font-size: 18px; border-radius: 12px;
+           border: none; cursor: pointer; background: #2563eb;
+           color: white; }
+  button:hover { background: #1e4fc2; }
+  #status { font-size: 16px; color: #93c5fd; text-align: center;
+            max-width: 500px; }
+  #result { font-size: 22px; font-weight: bold; color: #10b981;
+            text-align: center; min-height: 40px; }
+  #log { font-size: 12px; color: #555f72; max-width: 500px;
+          text-align: left; }
+</style>
+</head>
+<body>
+
+<h2>🎙️ Microphone Test</h2>
+<div id="status">Click the button and speak something...</div>
+<button id="testBtn" onclick="startTest()">🎙️ Start Mic Test</button>
+<div id="result"></div>
+<div id="log"></div>
+
+<script>
+  const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  function log(msg) {
+    const logEl = document.getElementById('log');
+    if (logEl.innerHTML) {
+      logEl.innerHTML += '<br>' + msg;
+    } else {
+      logEl.innerHTML = msg;
+    }
+    console.log(msg);
+  }
+
+  function startTest() {
+    const status = document.getElementById('status');
+    const result = document.getElementById('result');
+    const btn    = document.getElementById('testBtn');
+
+    result.textContent = '';
+    log('--- Starting test ---');
+
+    if (!SpeechRecognition) {
+      status.textContent =
+        '❌ Your browser does NOT support speech recognition. Use Chrome!';
+      status.style.color = '#ef4444';
+      return;
+    }
+    log('✅ Browser supports SpeechRecognition');
+
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(stream => {
+        log('✅ Microphone permission granted');
+        log('✅ Stream active: ' + stream.active);
+        stream.getTracks().forEach(t => t.stop());
+
+        const rec = new SpeechRecognition();
+        rec.lang = 'en-US';
+        rec.continuous = false;
+        rec.interimResults = false;         // we only care about final result
+
+        rec.onstart = () => {
+          log('✅ Recognition started - speak now!');
+          status.textContent = '🔴 RECORDING... Speak something clearly!';
+          status.style.color = '#ef4444';
+          btn.textContent = '🔴 Recording...';
+          btn.disabled = true;
+        };
+
+        rec.onresult = e => {
+          let text = '';
+          for (let i = 0; i < e.results.length; i++) {
+            text += e.results[i][0].transcript;
+          }
+          log('✅ Heard: ' + text);
+          result.textContent = '✅ Heard: "' + text + '"';
+          status.textContent = '🎉 Voice is working perfectly!';
+          status.style.color = '#10b981';
+        };
+
+        rec.onerror = e => {
+          log('❌ Error: ' + e.error);
+          status.style.color = '#ef4444';
+          btn.textContent = '🎙️ Try Again';
+          btn.disabled = false;
+
+          if (e.error === 'not-allowed') {
+            status.textContent =
+              '❌ Microphone BLOCKED! Go to Chrome settings → allow microphone for 127.0.0.1';
+          } else if (e.error === 'no-speech') {
+            status.textContent =
+              '⚠️ No speech detected. Speak louder and closer to mic!';
+          } else if (e.error === 'audio-capture') {
+            status.textContent =
+              '❌ No microphone found! Check Windows sound settings.';
+          } else if (e.error === 'network') {
+            status.textContent =
+              '❌ Network error. Chrome needs internet for speech recognition!';
+          } else {
+            status.textContent = '❌ Error: ' + e.error;
+          }
+        };
+
+        rec.onend = () => {
+          log('Recognition ended');
+          btn.textContent = '🎙️ Test Again';
+          btn.disabled = false;
+        };
+
+        rec.start();
+      })
+      .catch(err => {
+        log('❌ Mic permission error: ' + err.message);
+        status.textContent =
+          '❌ Microphone access denied! Error: ' + err.message;
+        status.style.color = '#ef4444';
+      });
+  }
+</script>
+</body>
+</html>

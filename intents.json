@@ -1,0 +1,418 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening", "howdy", "hai", "vanakkam", "good afternoon", "hiya"],
+      "responses": [
+        "Hello! Welcome to Nadar Saraswathi College of Engineering and Technology (NSCET). How can I help you today?",
+        "Hi there! I'm the NSCET Assistant. Ask me anything about our college!",
+        "Vanakkam! Welcome to NSCET, Theni. I'm here to help you explore our college. What would you like to know?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "thanks bye", "ok bye", "thank you bye", "exit", "quit", "that's all"],
+      "responses": [
+        "Goodbye! Feel free to return anytime for information about NSCET.",
+        "Thank you for visiting NSCET's chatbot. Have a great day!",
+        "See you soon! Best wishes from NSCET, Theni."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thank you", "thanks", "thanks a lot", "helpful", "that was useful", "great thanks", "ok thank you"],
+      "responses": [
+        "You're welcome! Is there anything else you'd like to know about NSCET?",
+        "Happy to help! Feel free to ask more questions about our college."
+      ]
+    },
+    {
+      "tag": "college_name",
+      "patterns": ["what is this college", "college name", "full name", "what is NSCET", "tell me about the college", "about college", "which college is this", "full form of NSCET"],
+      "responses": [
+        "Nadar Saraswathi College of Engineering and Technology (NSCET) is a premier engineering institution located at Vadapudupatti, Annanji (P.O), Theni - 625531, Tamil Nadu. It is managed by Theni Melapettai Hindu Nadargal Uravinmurai (TMHNU) Trust, affiliated to Anna University Chennai, approved by AICTE New Delhi, accredited by NAAC with 'A' Grade, and is an ISO 9001:2015 Certified Institution."
+      ]
+    },
+    {
+      "tag": "location",
+      "patterns": ["where is the college", "location", "address", "how to reach", "college address", "where is NSCET", "which place", "which district", "where are you located"],
+      "responses": [
+        "NSCET is located at:\n📍 Vadapudupatti, Annanji (P.O), Theni - 625531, Tamil Nadu.\nThe college is well connected by road and our college bus service covers Theni, Madurai, Dindigul and surrounding areas. Nearest town is Theni."
+      ]
+    },
+    {
+      "tag": "affiliation",
+      "patterns": ["which university", "affiliated to", "university", "affiliation", "anna university", "approved by", "accredited", "naac", "iso", "aicte", "recognition"],
+      "responses": [
+        "NSCET holds the following prestigious recognitions:\n✅ Affiliated to Anna University, Chennai\n✅ Approved by AICTE, New Delhi\n✅ Accredited by NAAC with 'A' Grade\n✅ ISO 9001:2015 Certified Institution\n✅ Recognised by UGC\nCounselling Code: 5865"
+      ]
+    },
+    {
+      "tag": "counselling_code",
+      "patterns": ["counselling code", "tneaonline code", "tnea code", "college code", "what is the code"],
+      "responses": [
+        "The TNEA Counselling Code for NSCET is: 🎯 5865\nUse this code while applying through tneaonline.org during TNEA counselling."
+      ]
+    },
+    {
+      "tag": "departments",
+      "patterns": ["departments", "courses offered", "what courses", "branches", "available courses", "what can I study", "engineering departments", "all departments", "list of courses"],
+      "responses": [
+        "NSCET offers the following programs:\n\n🖥️ Faculty of Computer Science & Engineering:\n  • B.E. Computer Science & Engineering (CSE)\n  • B.Tech. Artificial Intelligence & Data Science (AI & DS)\n  • B.Tech. Information Technology (IT)\n\n⚙️ Faculty of Mechanical Engineering:\n  • B.E. Mechanical Engineering (MECH)\n  • M.E. Manufacturing Engineering\n\n🏗️ Faculty of Civil Engineering:\n  • B.E. Civil Engineering (CIVIL)\n  • M.E. Structural Engineering\n\n📡 B.E. Electronics & Communication Engineering (ECE)\n⚡ B.E. Electrical and Electronics Engineering (EEE)\n📚 Department of Science and Humanities (S&H)\n\nFor more details visit: www.nscet.org"
+      ]
+    },
+    {
+      "tag": "cse",
+      "patterns": ["CSE", "computer science", "CS department", "software", "computer engineering", "coding department", "be cse"],
+      "responses": [
+        "The CSE department at NSCET offers B.E. Computer Science and Engineering, a 4-year UG program. It covers core areas like programming, data structures, algorithms, AI, machine learning, cloud computing, and web development. The department has modern computer labs and experienced faculty. Visit: www.nscet.org/department/?dept=cse"
+      ]
+    },
+    {
+      "tag": "aids",
+      "patterns": ["AI", "artificial intelligence", "data science", "AI and DS", "aids department", "btech ai", "machine learning course"],
+      "responses": [
+        "NSCET offers B.Tech. in Artificial Intelligence & Data Science (AI & DS). This is a 4-year program covering machine learning, deep learning, big data analytics, Python, data visualization, and more. It is one of the most in-demand programs preparing students for the AI-driven industry. Visit: www.nscet.org/department/?dept=ai-and-ds"
+      ]
+    },
+    {
+      "tag": "it",
+      "patterns": ["IT department", "information technology", "btech IT", "b.tech IT"],
+      "responses": [
+        "NSCET offers B.Tech. in Information Technology (IT), a 4-year program covering networking, cybersecurity, software engineering, database management, cloud computing, and more. Visit: www.nscet.org/department/?dept=it"
+      ]
+    },
+    {
+      "tag": "ece",
+      "patterns": ["ECE", "electronics", "communication engineering", "electronics department", "be ece"],
+      "responses": [
+        "The ECE department offers B.E. in Electronics and Communication Engineering. It covers circuits, signal processing, VLSI, embedded systems, IoT, and communication systems. Well-equipped labs with modern instruments. Visit: www.nscet.org/department/?dept=ece"
+      ]
+    },
+    {
+      "tag": "eee",
+      "patterns": ["EEE", "electrical", "electrical engineering", "electrical department", "be eee"],
+      "responses": [
+        "The EEE department offers B.E. in Electrical and Electronics Engineering. It covers power systems, control systems, electric machines, renewable energy, and smart grid technologies. Visit: www.nscet.org/department/?dept=eee"
+      ]
+    },
+    {
+      "tag": "mech",
+      "patterns": ["mechanical", "mech department", "be mech", "mechanical engineering", "me manufacturing"],
+      "responses": [
+        "NSCET's Mechanical Engineering faculty offers:\n• B.E. Mechanical Engineering (UG)\n• M.E. Manufacturing Engineering (PG)\nIt covers thermodynamics, manufacturing, CAD/CAM, robotics, and industrial engineering. Visit: www.nscet.org/department/?dept=mech"
+      ]
+    },
+    {
+      "tag": "civil",
+      "patterns": ["civil", "civil engineering", "be civil", "structural engineering", "me structural"],
+      "responses": [
+        "NSCET's Civil Engineering faculty offers:\n• B.E. Civil Engineering (UG)\n• M.E. Structural Engineering (PG)\nIt covers structural design, construction management, surveying, environmental engineering, and transportation. Visit: www.nscet.org/department/?dept=civil"
+      ]
+    },
+    {
+      "tag": "principal",
+      "patterns": ["principal", "who is the principal", "head of college", "dean", "principal name", "who is principal", "mathalai sundaram", "Dr. Mathalai Sundaram"],
+      "responses": [
+        "The Principal of NSCET is Dr. Mathalai Sundaram. He leads the institution with strong academic vision and administrative excellence. For more details, visit: www.nscet.org/principal/"
+      ]
+    },
+    {
+      "tag": "trust",
+      "patterns": ["trust", "management", "who manages", "tmhnu", "who owns nscet", "founder", "governing body"],
+      "responses": [
+        "NSCET is managed by Theni Melapettai Hindu Nadargal Uravinmurai (TMHNU) Trust. The governing council oversees the institution's administration and development. For more info visit: www.nscet.org/administration/"
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": ["fees", "tuition fee", "fee structure", "how much fees", "cost of studying", "annual fees", "fee details"],
+      "responses": [
+        "The fee structure at NSCET is regulated by the Tamil Nadu Government. For the most accurate and current fee details, please:\n📞 Call: 04546-263900 / 263901 / 263902\n🌐 Visit: www.nscet.org/admission/\nScholarship options are also available for eligible students. A fee refund policy is available at www.nscet.org/files/FEE_REFUND_POLICY.pdf"
+      ]
+    },
+    {
+      "tag": "admission",
+      "patterns": ["admission", "how to join", "admission process", "how to apply", "enrollment", "join NSCET", "get admission", "tnea", "how to get admission"],
+      "responses": [
+        "Admission to NSCET for B.E./B.Tech programs is through TNEA (Tamil Nadu Engineering Admissions) counselling by Anna University.\n\nSteps:\n1️⃣ Register at tneaonline.org\n2️⃣ Fill your 10+2 marks\n3️⃣ Use NSCET Counselling Code: 5865\n4️⃣ Choose your preferred department\n5️⃣ Attend counselling and get allotment\n6️⃣ Report to college with original documents\n\nFor management quota or direct admission enquiry, contact us at 04546-263900 or visit www.nscet.org/admission/"
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["contact", "phone number", "email", "how to contact", "reach college", "call college", "contact number", "helpdesk", "college number"],
+      "responses": [
+        "You can contact NSCET through:\n📞 Phone: 04546-263900 / 263901 / 263902\n📧 Email: principal@nscet.org\n🌐 Website: www.nscet.org\n📍 Address: Post Box No: 60, Annanji (P.O), Vadapudupatti, Theni - 625531\n🕘 Office Hours: Monday to Friday, 9 AM - 5 PM\n🆘 Helpdesk: www.nscet.org/helpdesk/"
+      ]
+    },
+    {
+      "tag": "facilities",
+      "patterns": ["facilities", "infrastructure", "what facilities", "amenities", "labs", "library", "sports", "canteen", "what does the college have", "campus facilities"],
+      "responses": [
+        "NSCET offers excellent campus facilities:\n🏫 Smart classrooms with modern teaching aids\n💻 Well-equipped computer and engineering labs\n📚 Digital library with a large book and journal collection\n🏠 Separate hostel for boys and girls\n🍽️ Hygienic canteen\n⚽ Sports grounds and indoor games\n🏋️ Gym facility\n🚌 College bus service covering Theni, Madurai, Dindigul\n🏥 Health and Medical facilities\n📡 High-speed WiFi campus\n🔬 Research and Development Cell\n💡 Entrepreneurship Development Cell (EDC)\nFor more: www.nscet.org"
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": ["hostel", "accommodation", "stay", "room", "boarding", "hostel facility", "is hostel available", "boys hostel", "girls hostel"],
+      "responses": [
+        "Yes! NSCET provides separate hostel facilities for boys and girls:\n🏠 Boys Hostel: www.nscet.org/hostel/boys_hostel/\n🏠 Girls Hostel: www.nscet.org/hostel/girls_hostel/\n\nThe hostels offer clean rooms, healthy food, 24-hour security, WiFi, and a peaceful study environment. For hostel fees and availability, contact the college at 04546-263900."
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": ["placement", "job", "recruitment", "campus placement", "companies", "salary", "career", "job opportunities", "placement record", "placed students"],
+      "responses": [
+        "NSCET has an active Training and Placement Cell with a strong placement record. Recent recruiters include companies from IT, manufacturing, and core engineering sectors. The college provides:\n✅ Pre-placement training\n✅ Aptitude and reasoning coaching\n✅ Mock interviews\n✅ Soft skills and communication training\n\nFor latest placement updates and placed students: www.nscet.org/placement/"
+      ]
+    },
+    {
+      "tag": "scholarship",
+      "patterns": ["scholarship", "financial aid", "free seat", "stipend", "sc st scholarship", "merit scholarship", "scholarship details"],
+      "responses": [
+        "NSCET supports students through various scholarships:\n• Tamil Nadu Government scholarships for SC/ST/BC/MBC students\n• Post-Matric scholarship\n• TMHNU Trust scholarships\n• Merit-based scholarships for top performers\n\nContact the scholarship coordinator or college office for eligibility and application. Fee refund policy: www.nscet.org/files/FEE_REFUND_POLICY.pdf"
+      ]
+    },
+    {
+      "tag": "events",
+      "patterns": ["events", "fest", "cultural", "techfest", "symposium", "activities", "extracurricular", "waves", "euphoria", "cultural fest"],
+      "responses": [
+        "NSCET hosts vibrant events throughout the year:\n🎭 Annual Cultural Fest – Euphoria (15th edition was Euphoria-25!)\n💡 WAVES'25 – Annual Tech-Cultural Fest showcasing innovation and creativity\n🏆 Sports Day and inter-college tournaments\n👩‍💻 Hackathons, coding competitions\n🎓 Graduation Day (11th Graduation Day held in 2025)\n🌐 International Conferences: ICRTT'25, ICAMS 2K25, AMPSE25\n\nFor updates: www.nscet.org/Information_corner/"
+      ]
+    },
+    {
+      "tag": "research",
+      "patterns": ["research", "research center", "r&d", "research activities", "innovation", "research cell", "edc", "entrepreneurship"],
+      "responses": [
+        "NSCET has a dedicated Research & Development ecosystem:\n🔬 Research and Development Cell\n🏛️ Research Centres\n📊 Research Statistics\n💡 Entrepreneurship Development Cell (EDC)\n🤝 15+ Industry MOUs and collaborations\n\nFor more details: www.nscet.org/research/"
+      ]
+    },
+    {
+      "tag": "elearning",
+      "patterns": ["e-learning", "online learning", "nptel", "infosys springboard", "online courses", "digital learning"],
+      "responses": [
+        "NSCET provides access to e-learning platforms for students:\n📘 Infosys Springboard – Industry-relevant skill courses\n🎓 NPTEL – Free online courses from IITs and IISc\n\nVisit: www.nscet.org/e-learning/"
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": ["library", "books", "digital library", "reading room", "library facility"],
+      "responses": [
+        "NSCET has a well-stocked library with a large collection of books, journals, e-books, and digital resources. It provides a quiet and comfortable environment for students to study and research. For more: www.nscet.org/library/"
+      ]
+    },
+    {
+      "tag": "transport",
+      "patterns": ["bus", "transport", "how to come", "travel", "bus route", "college bus", "bus facility"],
+      "responses": [
+        "NSCET provides a college bus service covering Theni, Madurai, Dindigul, and surrounding areas. The college is accessible via the Theni-Periyakulam highway. For bus routes and timings, contact the college office at 04546-263900 or visit: www.nscet.org/transport/"
+      ]
+    },
+    {
+      "tag": "sports",
+      "patterns": ["sports", "games", "cricket", "football", "basketball", "sports facility", "outdoor games", "indoor games", "gym"],
+      "responses": [
+        "NSCET has excellent sports facilities:\n⚽ Outdoor grounds: cricket, football, basketball\n🏸 Indoor games\n🏋️ Gym\n🏆 Annual Sports Day and inter-college tournaments\n\nThe NSS unit also promotes physical fitness and community service. For more: www.nscet.org/sports/"
+      ]
+    },
+    {
+      "tag": "nss",
+      "patterns": ["nss", "national service scheme", "social service", "nss unit", "community service"],
+      "responses": [
+        "NSCET has an active National Service Scheme (NSS) unit that promotes community service, social awareness, and student development. Students participate in camps, cleanliness drives, and social initiatives. For more: www.nscet.org/nss/"
+      ]
+    },
+    {
+      "tag": "clubs",
+      "patterns": ["clubs", "chapters", "student clubs", "coding club", "robotics club", "literary club", "student activities"],
+      "responses": [
+        "NSCET has a vibrant student club culture with various Clubs and Chapters:\n💻 Coding and technical clubs\n🤖 Robotics club\n📖 Literary club\n🌱 NSS\n🏆 Sports clubs\n\nStudents are actively encouraged to participate and lead. For more: www.nscet.org/clubs_and_chapters/"
+      ]
+    },
+    {
+      "tag": "anti_ragging",
+      "patterns": ["ragging", "anti ragging", "ragging complaint", "harassment", "ragging policy"],
+      "responses": [
+        "NSCET maintains a strict zero-tolerance policy against ragging. The Anti-Ragging Cell ensures a safe and healthy campus environment for all students. For any concerns: www.nscet.org/anti_ragging/ or contact the college office at 04546-263900."
+      ]
+    },
+    {
+      "tag": "exam_results",
+      "patterns": ["results", "exam results", "anna university results", "check result", "semester result", "internal marks"],
+      "responses": [
+        "Semester exam results are published by Anna University on their official website: coe1.annauniv.edu. You can also check results on the Anna University student portal. For internal assessment marks, contact your respective department at NSCET."
+      ]
+    },
+    {
+      "tag": "nirf",
+      "patterns": ["nirf", "ranking", "college ranking", "national ranking", "how is the college ranked"],
+      "responses": [
+        "NSCET participates in the National Institutional Ranking Framework (NIRF). For the latest ranking details, visit: www.nscet.org/NIRF/"
+      ]
+    },
+    {
+      "tag": "best_features",
+      "patterns": ["why join NSCET", "best features", "advantages", "why choose", "special about NSCET", "unique", "why this college", "highlights"],
+      "responses": [
+        "Here's why NSCET stands out:\n⭐ NAAC 'A' Grade Accredited & ISO 9001:2015 Certified\n⭐ Affiliated to prestigious Anna University, Chennai\n⭐ 14+ years of academic excellence\n⭐ 87+ experienced and dedicated teachers\n⭐ 1000+ students on campus\n⭐ 15+ Industry MOUs for real-world exposure\n⭐ Strong placement record with top companies\n⭐ Modern labs and smart classrooms\n⭐ International conference hosting (ICRTT, ICAMS)\n⭐ Lush green campus in peaceful Vadapudupatti, Theni\n⭐ Affordable fees with scholarship support\n⭐ Active student clubs, NSS, sports, cultural fests\n⭐ Separate and secure hostel for boys and girls\n⭐ College bus service from Theni, Madurai, Dindigul\n\nVisit us: www.nscet.org"
+      ]
+    },
+    {
+      "tag": "vision_mission",
+      "patterns": ["vision", "mission", "vision and mission", "college vision", "college mission", "goal of college"],
+      "responses": [
+        "🎯 VISION:\nTo establish NSCET as a leading technological institution.\n\n🚀 MISSION:\n• To provide professional, constructive and learner-centered education.\n• To make learners contribute to the development of the nation through academic and industrial excellence.\n• To encourage learners to involve in innovative research with ethics.\n• To produce competitive and confident graduates to face the ever-growing challenges of the labor market."
+      ]
+    },
+    {
+      "tag": "medical",
+      "patterns": ["medical", "health", "doctor", "medical facility", "first aid", "health center", "sick room"],
+      "responses": [
+        "NSCET has Health and Medical Facilities available on campus to support student well-being. For more details: www.nscet.org/medical_facility/"
+      ]
+    },
+    {
+      "tag": "alumni",
+      "patterns": ["alumni", "old students", "graduates", "past students", "alumni network"],
+      "responses": [
+        "NSCET has a proud and growing alumni network. Our graduates are working across top companies and industries nationwide. For alumni information and connection: www.nscet.org/alumni/"
+      ]
+    },
+    {
+      "tag": "best_students",
+      "patterns": [
+        "best students", "top students", "rank holders", "gold medal",
+        "topper", "university rank", "best performer", "brilliant students",
+        "who got rank", "university topper", "first rank", "academic topper",
+        "best student in nscet", "nscet topper", "merit students"
+      ],
+      "responses": [
+        "🏆 NSCET proudly celebrates its rank holders and top performers every year at the Graduation Day ceremony. Our students have consistently secured University Ranks in Anna University examinations. For the latest rank holders and award winners, visit: www.nscet.org/gallery/ or contact the college office at 04546-263900.",
+        "⭐ NSCET has produced several Anna University rank holders over the years! Top performing students are recognized at the Annual Graduation Day. For details on recent toppers and achievers, visit: www.nscet.org"
+      ]
+    },
+    {
+      "tag": "college_age",
+      "patterns": [
+        "how old is the college", "when was nscet founded",
+        "when was nscet established", "how many years old",
+        "nscet established year", "year of establishment",
+        "when did nscet start", "history of nscet", "nscet history"
+      ],
+      "responses": [
+        "NSCET has been nurturing engineers for 14+ glorious years! 🎓 The college was established by the TMHNU Trust and has grown into a NAAC 'A' Grade accredited institution affiliated to Anna University. From a small beginning to 1000+ students today — quite a journey! Visit: www.nscet.org/about/"
+      ]
+    },
+    {
+      "tag": "student_count",
+      "patterns": [
+        "how many students", "total students", "student strength",
+        "how many students in nscet", "student count",
+        "how big is the college", "college strength", "number of students"
+      ],
+      "responses": [
+        "NSCET currently has 1000+ students across all departments and programs! 🎓 With 87+ dedicated teachers and 14+ years of experience, every student gets personal attention and quality education. The campus is lively with students from Theni, Madurai, Dindigul and beyond!"
+      ]
+    },
+    {
+      "tag": "faculty_count",
+      "patterns": [
+        "how many teachers", "how many faculty", "number of professors",
+        "faculty strength", "staff count", "how many staff",
+        "teachers in nscet", "professors count"
+      ],
+      "responses": [
+        "NSCET has 87+ highly qualified and experienced teaching faculty members! 👨‍🏫 Our professors include PhD holders, industry experts, and dedicated researchers. Each department has specialized faculty committed to student growth and academic excellence."
+      ]
+    },
+    {
+      "tag": "canteen",
+      "patterns": [
+        "canteen", "food", "mess", "is food available", "what about food",
+        "canteen food", "is there a canteen", "college mess",
+        "food facility", "eating place"
+      ],
+      "responses": [
+        "Yes! NSCET has a hygienic and affordable canteen on campus 🍽️ serving breakfast, lunch, snacks, and beverages. The food is prepared in a clean environment with a variety of South Indian meals. Hostel students also get nutritious meals in the hostel mess. You won't go hungry at NSCET! 😄"
+      ]
+    },
+    {
+      "tag": "wifi",
+      "patterns": [
+        "wifi", "internet", "is wifi available", "internet facility",
+        "wifi in campus", "high speed internet", "wifi in hostel",
+        "do they have wifi", "campus internet"
+      ],
+      "responses": [
+        "Yes! 📡 NSCET has a high-speed WiFi campus covering classrooms, labs, library, and hostel areas. Students can access learning resources, research papers, NPTEL courses, and Infosys Springboard anytime. A well-connected campus for a well-connected future! 🚀"
+      ]
+    },
+    {
+      "tag": "is_good_college",
+      "patterns": [
+        "is nscet a good college", "is it worth joining",
+        "should i join nscet", "is nscet worth it",
+        "what do you think about nscet", "is this college good",
+        "good college or not", "recommend nscet",
+        "is nscet recommended", "nscet good or bad"
+      ],
+      "responses": [
+        "Absolutely! 🌟 NSCET is a fantastic choice and here's why:\n✅ NAAC 'A' Grade Accredited\n✅ Anna University affiliated\n✅ ISO 9001:2015 Certified\n✅ 87+ experienced faculty\n✅ Strong placement record\n✅ 15+ industry MOUs\n✅ Peaceful green campus in Theni\n✅ Affordable fees with scholarships\n✅ Active student life — fests, sports, clubs\n\nThousands of successful engineers have graduated from NSCET. It's a decision you won't regret! 😊"
+      ]
+    },
+    {
+      "tag": "dress_code",
+      "patterns": [
+        "dress code", "uniform", "what to wear", "is there a uniform",
+        "college uniform", "do we need to wear uniform",
+        "formal dress", "what is the dress code"
+      ],
+      "responses": [
+        "NSCET follows a professional dress code 👔 to maintain discipline and a formal academic environment. Students are generally required to wear decent, formal attire on campus. For exact dress code rules and guidelines, please contact the college office at 04546-263900 or visit: www.nscet.org"
+      ]
+    },
+    {
+      "tag": "mou_industry",
+      "patterns": [
+        "mou", "industry collaboration", "tie up", "company tie up",
+        "industry partners", "how many mou", "collaborations",
+        "nscet industry tie up", "which companies collaborate"
+      ],
+      "responses": [
+        "NSCET has 15+ active MOUs (Memorandums of Understanding) with industries and organizations! 🤝 These collaborations provide students with:\n• Internship opportunities\n• Guest lectures from industry experts\n• Real-world project exposure\n• Placement connections\n• Skill development programs\n\nFor the full list of industry partners: www.nscet.org/mou/"
+      ]
+    },
+    {
+      "tag": "higher_studies",
+      "patterns": [
+        "higher studies", "after graduation", "gate exam",
+        "can i do mtech", "pg after nscet", "mtech admission",
+        "study after be", "masters degree", "upsc after engineering",
+        "what after btech"
+      ],
+      "responses": [
+        "After graduating from NSCET, you have many exciting options! 🎓\n\n📘 Higher Studies:\n• GATE exam → M.Tech at IITs/NITs\n• GRE → MS abroad (USA, Germany, Canada)\n• TANCET → M.E. at Tamil Nadu colleges\n• MBA for management roles\n\n💼 Jobs:\n• Campus placements through NSCET's placement cell\n• Government jobs via TNPSC, UPSC, SSC\n• Core engineering and IT sector jobs\n\nNSCET also offers M.E. programs in Manufacturing and Structural Engineering on campus! 🚀"
+      ]
+    },
+    {
+      "tag": "student_life",
+      "patterns": [
+        "student life", "life in nscet", "campus life",
+        "how is life in nscet", "what is it like to study in nscet",
+        "fun in college", "college experience", "daily life",
+        "campus experience", "how is the atmosphere"
+      ],
+      "responses": [
+        "Life at NSCET is vibrant, fun and fulfilling! 🌟\n\n🌅 A typical day:\n• Morning classes with smart board teaching\n• Lab sessions with hands-on experiments\n• Library and self-study time\n• Canteen breaks with friends 😄\n\n🎭 Beyond academics:\n• Cultural fest Euphoria every year\n• WAVES tech-cultural showcase\n• Sports day and tournaments\n• Coding clubs, robotics, literary club\n• NSS community service activities\n• International conferences on campus\n\n🏠 Hostel life is safe, peaceful, and WiFi connected!\n\nNSCET is not just a college — it's an experience! Come be a part of it. 😊"
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [],
+      "responses": [
+        "I'm sorry, I didn't quite understand that. Could you rephrase your question? You can ask me about departments, admissions, fees, hostel, placements, facilities, principal, events, and more about NSCET!",
+        "I'm not sure I understood that. Try asking about: admissions, courses, fees, hostel, placements, contact info, clubs, or events at NSCET. I'm here to help! 😊"
+      ]
+    }
+  ]
+}

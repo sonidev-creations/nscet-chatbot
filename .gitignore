@@ -1,0 +1,34 @@
+# --- Python Virtual Environment ---
+venv/
+.env
+*.env
+
+# --- Node Packages ---
+node_modules/
+
+# --- Python Cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Logs ---
+*.log
+
+# --- OS-specific files ---
+# Windows
+Thumbs.db
+# macOS
+.DS_Store
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+
+# --- Build / Distribution ---
+dist/
+build/
+
+# --- Environment / Keys (safety) ---
+*secret*
+*key*

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NSCET AI Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-layer">
+    <div class="particle p1"></div><div class="particle p2"></div>
+    <div class="particle p3"></div><div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  </div>
+<div class="chat-wrapper">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-ring">
+          <img src="{{ url_for('static', filename='images/nscet_logo.png') }}" alt="NSCET Logo"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="logo-fallback"><span>NS</span></div>
+        </div>
+        <div class="logo-text"><h1>NSCET</h1><p>AI Assistant</p></div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-divider"></div>
+      <nav class="sidebar-nav">
+        <p class="nav-label">Quick Topics</p>
+        <button class="nav-btn active" onclick="sendChip('Tell me about NSCET')"><span class="nav-icon">🏛️</span> About College</button>
+        <button class="nav-btn" onclick="sendChip('what courses are available')"><span class="nav-icon">📚</span> Departments</button>
+        <button class="nav-btn" onclick="sendChip('how to get admission')"><span class="nav-icon">📝</span> Admissions</button>
+        <button class="nav-btn" onclick="sendChip('placement record')"><span class="nav-icon">💼</span> Placements</button>
+        <button class="nav-btn" onclick="sendChip('hostel facility')"><span class="nav-icon">🏠</span> Hostel</button>
+        <button class="nav-btn" onclick="sendChip('fees')"><span class="nav-icon">💰</span> Fees</button>
+        <button class="nav-btn" onclick="sendChip('events and fest')"><span class="nav-icon">🎭</span> Events</button>
+        <button class="nav-btn" onclick="sendChip('contact number')"><span class="nav-icon">📞</span> Contact</button>
+      </nav>
+
+      <div class="sidebar-divider"></div>
+      <div class="history-section">
+        <div class="history-header">
+          <p class="nav-label" style="margin:0">📜 Recent Chats</p>
+          <button class="clear-btn" id="clearHistoryBtn">Clear</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <p class="history-empty">No history yet. Start chatting!</p>
+        </div>
+      </div>
+
+    </aside>
+    <main class="chat-panel">
+      <header class="chat-header">
+        <div class="header-left">
+          <div class="header-avatar">
+            <img src="{{ url_for('static', filename='images/nscet_logo.png') }}" alt="NSCET"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+            <div class="avatar-fallback">NS</div>
+            <span class="status-dot"></span>
+          </div>
+          <div class="header-info">
+            <h2>NSCET Assistant</h2>
+            <p><span class="online-pulse"></span> Online — Powered by NSCET</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <button class="header-btn" id="speakToggle" title="Toggle Voice">🔊</button>
+          <button class="header-btn" id="historyToggle" title="Toggle Sidebar">📜</button>
+          <button class="header-btn" onclick="clearChat()" title="Clear Chat">🗑️</button>
+          <div class="header-tag"><span>Anna University Affiliated</span></div>
+        </div>
+      </header>
+      <div class="chat-body" id="chatBody">
+        <div class="welcome-card" id="welcomeCard">
+          <div class="welcome-icon">
+            <img src="{{ url_for('static', filename='images/nscet_logo.png') }}" alt="NSCET"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+            <div class="welcome-fallback">🎓</div>
+          </div>
+          <h3>Vanakkam! Welcome to NSCET</h3>
+          <p>I'm your AI-powered college assistant. Ask me about admissions, departments, facilities — or <strong>anything at all!</strong> Gemini AI has my back. 🤖</p>
+          <div class="welcome-chips">
+            <button class="chip" onclick="sendChip('Tell me about NSCET')">🏛️ About College</button>
+            <button class="chip" onclick="sendChip('what courses are available')">📚 Courses</button>
+            <button class="chip" onclick="sendChip('how to get admission')">📝 Admission</button>
+            <button class="chip" onclick="sendChip('placement record')">💼 Placements</button>
+            <button class="chip" onclick="sendChip('scholarship details')">🎓 Scholarship</button>
+            <button class="chip" onclick="sendChip('CSE department')">💻 CSE Dept</button>
+            <button class="chip" onclick="sendChip('IT department')">💻 IT Dept</button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="input-box">
+          <input type="text" id="userInput"
+            placeholder="Ask about NSCET or anything else..."
+            autocomplete="off" maxlength="500"/>
+          <button class="voice-btn" id="voiceBtn" title="Voice Input">🎙️</button>
+          <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">Press <kbd>Enter</kbd> to send · 🎙️ Voice · NSCET Official Assistant 🎓</p>
+      </div>
+
+    </main>
+  </div>
+
+<script>
+const chatBody = document.getElementById('chatBody');
+const inputEl  = document.getElementById('userInput');
+const sendBtn  = document.getElementById('sendBtn');
+const voiceBtn = document.getElementById('voiceBtn');
+
+let voiceEnabled = true;
+let recognition  = null;
+let isListening  = false;
+
+inputEl.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+});
+
+document.getElementById('speakToggle').addEventListener('click', function() {
+  voiceEnabled = !voiceEnabled;
+  this.textContent = voiceEnabled ? '🔊' : '🔇';
+  this.style.background = voiceEnabled ? '' : 'rgba(239,68,68,0.2)';
+});
+
+document.getElementById('historyToggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('sidebar-open');
+  loadHistory();
+});
+
+document.getElementById('clearHistoryBtn').addEventListener('click', async () => {
+  if (!confirm('Clear all chat history?')) return;
+  await fetch('/clear-history', { method: 'POST' });
+  loadHistory(); loadStats();
+});
+
+async function sendMessage() {
+  const text = inputEl.value.trim();
+  if (!text) return;
+  const wc = document.getElementById('welcomeCard');
+  if (wc) wc.style.display = 'none';
+
+  appendMessage('user', text);
+  inputEl.value = '';
+  sendBtn.disabled = true;
+  const typingId = showTyping();
+
+  try {
+    const res  = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    });
+    const data = await res.json();
+    removeTyping(typingId);
+    appendMessage('bot', data.response, data.source, data.image);
+    if (voiceEnabled) speakText(data.response);
+    loadStats(); loadHistory();
+  } catch {
+    removeTyping(typingId);
+    appendMessage('bot', '⚠️ Connection error. Make sure Flask is running!', 'system', null);
+  }
+  sendBtn.disabled = false;
+  scrollBottom();
+}
+
+function appendMessage(role, text, source, image) {
+  const wrap = document.createElement('div');
+  wrap.className = `message ${role === 'user' ? 'user-msg' : 'bot-msg'}`;
+
+  const av = document.createElement('div');
+  av.className = 'msg-avatar';
+  if (role === 'bot') {
+    av.innerHTML = `<img src="/static/images/nscet_logo.png" alt="NS"
+      onerror="this.style.display='none';this.nextSibling.style.display='flex'"/>
+      <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#1e4fc2;background:white;border-radius:8px">NS</span>`;
+  } else {
+    av.innerHTML = `<span style="font-size:18px">👤</span>`;
+    av.style.background = 'rgba(255,255,255,0.1)';
+  }
+
+  const bub = document.createElement('div');
+  bub.className = 'msg-content';
+
+  const bubble = document.createElement('div');
+  bubble.className = 'msg-bubble';
+  bubble.innerHTML = formatText(text);
+  bub.appendChild(bubble);
+
+  if (role === 'bot' && source && source !== 'system') {
+    const tag = document.createElement('span');
+    tag.className = `source-badge ${source}`;
+    tag.textContent = source === 'gemini' ? '✨ Gemini AI' : '📌 Intent Match';
+    bub.appendChild(tag);
+  }
+
+  if (image) {
+    const card = document.createElement('div');
+    card.className = 'image-card';
+    card.innerHTML = `<img src="${image.url}" alt="${image.label}"
+      onerror="this.parentElement.style.display='none'"/>
+      <div class="image-card-label">🖼️ ${image.label}</div>`;
+    bub.appendChild(card);
+  }
+
+  const time = document.createElement('div');
+  time.className = 'msg-time';
+  time.textContent = new Date().toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+  bub.appendChild(time);
+
+  wrap.appendChild(av);
+  wrap.appendChild(bub);
+  chatBody.appendChild(wrap);
+  scrollBottom();
+}
+
+function formatText(t) {
+  return t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g,'<em>$1</em>')
+          .replace(/\n/g,'<br>');
+}
+
+function showTyping() {
+  const id = 'typing-' + Date.now();
+  const div = document.createElement('div');
+  div.id = id;
+  div.className = 'message bot-msg typing-bubble';
+  div.innerHTML = `<div class="msg-avatar">
+    <img src="/static/images/nscet_logo.png" alt="NS" onerror="this.style.display='none'"/>
+  </div>
+  <div class="msg-content"><div class="msg-bubble">
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div></div>`;
+  chatBody.appendChild(div);
+  scrollBottom();
+  return id;
+}
+function removeTyping(id) { const el = document.getElementById(id); if (el) el.remove(); }
+
+function sendChip(text) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  inputEl.value = text;
+  sendMessage();
+}
+
+function clearChat() {
+  chatBody.innerHTML = `<div class="welcome-card" id="welcomeCard">
+    <div class="welcome-icon">
+      <img src="/static/images/nscet_logo.png" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="welcome-fallback">🎓</div>
+    </div>
+    <h3>Vanakkam! Welcome to NSCET</h3>
+    <p>Ask me anything about NSCET or any general question!</p>
+    <div class="welcome-chips">
+      <button class="chip" onclick="sendChip('Tell me about NSCET')">🏛️ About College</button>
+      <button class="chip" onclick="sendChip('what courses are available')">📚 Courses</button>
+      <button class="chip" onclick="sendChip('how to get admission')">📝 Admission</button>
+      <button class="chip" onclick="sendChip('placement record')">💼 Placements</button>
+    </div>
+  </div>`;
+}
+
+async function loadStats() {
+  try {
+    const d = await (await fetch('/stats')).json();
+    document.getElementById('statTotal').textContent  = d.total;
+    document.getElementById('statGemini').textContent = d.gemini;
+    document.getElementById('statIntent').textContent = d.intent;
+  } catch {}
+}
+
+async function loadHistory() {
+  const listEl = document.getElementById('historyList');
+  try {
+    const rows = await (await fetch('/history')).json();
+    if (!rows.length) { listEl.innerHTML = '<p class="history-empty">No history yet!</p>'; return; }
+    listEl.innerHTML = rows.slice(0,15).map(r => `
+      <div class="history-item" onclick="document.getElementById('userInput').value='${esc(r.user_input)}'">
+        <div class="history-q">💬 ${esc(r.user_input)}</div>
+        <div class="history-a">${esc(r.bot_response.substring(0,55))}...</div>
+        <span class="source-badge ${r.source}" style="font-size:10px;margin-top:4px">
+          ${r.source === 'gemini' ? '✨ Gemini' : '📌 Intent'}
+        </span>
+      </div>`).join('');
+  } catch { listEl.innerHTML = '<p class="history-empty" style="color:#ef4444">Failed to load</p>'; }
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SR();
+  recognition.lang = 'en-IN';
+  recognition.onresult = e => { inputEl.value = e.results[0][0].transcript; stopListening(); sendMessage(); };
+  recognition.onerror  = () => stopListening();
+  recognition.onend    = () => stopListening();
+  voiceBtn.addEventListener('click', () => isListening ? stopListening() : startListening());
+} else {
+  voiceBtn.style.opacity = '0.4';
+  voiceBtn.title = 'Use Chrome for voice support';
+}
+
+function startListening() {
+  isListening = true; voiceBtn.textContent = '🔴';
+  voiceBtn.classList.add('listening'); recognition.start();
+}
+function stopListening() {
+  isListening = false; voiceBtn.textContent = '🎙️';
+  voiceBtn.classList.remove('listening'); try { recognition.stop(); } catch {}
+}
+
+function speakText(text) {
+  if (!voiceEnabled || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text.replace(/[*_`#]/g,'').substring(0,200));
+  utt.lang = 'en-IN'; utt.rate = 0.95;
+  window.speechSynthesis.speak(utt);
+}
+
+function scrollBottom() { chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: 'smooth' }); }
+
+loadStats(); loadHistory();
+</script>
+</body>
+</html>
