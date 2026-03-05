@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sonidev-creations/nscet-chatbot/main/static/images/screenshot.png" alt="NSCET Chatbot" width="700"/>
+  <img src="https://raw.githubusercontent.com/sonidev-creations/nscet-chatbot/main/static/images/screenshot.png.png" alt="NSCET Chatbot" width="700"/>
 </p>
 # 🤖 NSCET Chatbot
 
