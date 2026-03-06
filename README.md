@@ -39,11 +39,11 @@ nscet-chatbot/
 │   └── js/
 │       └── script.js
 ├── templates/
-├── __pycache__/            <-- ignored by git
+├── __pycache__/           
 ├── .gitignore
 ├── README.md
 ├── app.py
-├── boost_python.py         <-- Python boost file
+├── boost_python.py         
 ├── chat_history.db
 ├── chatbot.py
 ├── intents.json
