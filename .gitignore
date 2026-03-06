@@ -31,4 +31,4 @@ build/
 
 # --- Environment / Keys (safety) ---
 *secret*
-*key*
+*key*venv/ 
