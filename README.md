@@ -31,16 +31,25 @@ NSCET Chatbot is a free, open-source chatbot built with **Python (Flask)** for N
 ```
 nscet-chatbot/
 ├── static/
-│   ├── css/style.css
-│   ├── images/nscet_logo.png
-│   └── js/script.js
+│   ├── css/
+│   │   └── style.css
+│   ├── images/
+│   │   ├── nscet_logo.png
+│   │   └── screenshot.png
+│   └── js/
+│       └── script.js
 ├── templates/
-├── venv/
+├── __pycache__/            <-- ignored by git
+├── .gitignore
+├── README.md
 ├── app.py
+├── boost_python.py         <-- Python boost file
+├── chat_history.db
 ├── chatbot.py
 ├── intents.json
-├── chat_history.db
-└── .gitignore
+├── package-lock.json
+├── package.json
+└── requirements.txt
 ```
 
 ---
