@@ -4,7 +4,8 @@
 # 🤖 NSCET Chatbot
 <br>
 <br>
-NSCET Chatbot is a free, open-source chatbot built with **Python (Flask)** for Nandha College of Engineering and Technology — helping students and staff get instant answers about college-related queries.
+**NSCET Chatbot** is a free, open-source assistant built with **Python (Flask)** for Nadar Saraswathi College of Engineering and Technology. It provides students and staff with instant answers to college-related queries.
+
 
 ---
 
